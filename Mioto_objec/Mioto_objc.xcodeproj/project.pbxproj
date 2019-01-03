@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AABFAF936AFA3A7C0A397B62 /* Pods_Mioto_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030B4060FED5CE83781FE03A /* Pods_Mioto_objc.framework */; };
+		B51E47F421C388FF00BAFB21 /* EditProfileViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51E47F221C388FF00BAFB21 /* EditProfileViewViewController.m */; };
+		B51E47F521C388FF00BAFB21 /* EditProfileViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51E47F321C388FF00BAFB21 /* EditProfileViewViewController.xib */; };
+		B5303CF421BA536500F92B12 /* LightGrayLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5303CF321BA536500F92B12 /* LightGrayLabel.m */; };
+		B5303CF921BA542600F92B12 /* BlackLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5303CF821BA542600F92B12 /* BlackLabel.m */; };
+		B53D014021B28DF100544CCB /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53D013E21B28DF100544CCB /* ForgotPasswordViewController.m */; };
+		B53D014121B28DF100544CCB /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53D013F21B28DF100544CCB /* ForgotPasswordViewController.xib */; };
+		B54F46B921B67A0300F2B328 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F46B721B67A0300F2B328 /* ProfileViewController.m */; };
+		B54F46BA21B67A0300F2B328 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54F46B821B67A0300F2B328 /* ProfileViewController.xib */; };
+		B54F46BE21B685FC00F2B328 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F46BC21B685FC00F2B328 /* SignupViewController.m */; };
+		B54F46BF21B685FC00F2B328 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54F46BD21B685FC00F2B328 /* SignupViewController.xib */; };
+		B56FCE5E21C0EBF8001404F7 /* AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FCE5D21C0EBF8001404F7 /* AlertHelper.m */; };
+		B574550A21BA756400F3254F /* Menu_1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B574550821BA756400F3254F /* Menu_1_ViewController.m */; };
+		B574550B21BA756400F3254F /* Menu_1_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B574550921BA756400F3254F /* Menu_1_ViewController.xib */; };
+		B576A57721BFB66D00887517 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = B576A57621BFB66D00887517 /* Profile.m */; };
+		B59F4B8E21AE7DFE00F3D7DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F4B8D21AE7DFE00F3D7DB /* AppDelegate.m */; };
+		B59F4B9621AE7DFF00F3D7DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F4B9521AE7DFF00F3D7DB /* Assets.xcassets */; };
+		B59F4B9921AE7DFF00F3D7DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59F4B9721AE7DFF00F3D7DB /* LaunchScreen.storyboard */; };
+		B59F4B9C21AE7DFF00F3D7DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F4B9B21AE7DFF00F3D7DB /* main.m */; };
+		B59F4BB021AE7EBF00F3D7DB /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F4BAF21AE7EBF00F3D7DB /* BaseLabel.m */; };
+		B5A0056D21AEA9E700F02EC6 /* CheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A0056C21AEA9E700F02EC6 /* CheckBox.m */; };
+		B5AD789621BB671C006E77C9 /* AccountBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AD789521BB671C006E77C9 /* AccountBusiness.m */; };
+		B5B9B79621B239EB00A70BA1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B9B79521B239EB00A70BA1 /* BaseViewController.m */; };
+		B5B9B79A21B23B5B00A70BA1 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B9B79821B23B5B00A70BA1 /* SigninViewController.m */; };
+		B5B9B79B21B23B5B00A70BA1 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5B9B79921B23B5B00A70BA1 /* SigninViewController.xib */; };
+		B5C60C0921C3C006003DF375 /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C60C0821C3C006003DF375 /* PickerView.m */; };
+		B5DB046621CDD17700A24621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DB046521CDD17700A24621 /* GoogleService-Info.plist */; };
+		B5DB046B21CDE96100A24621 /* ViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DB046921CDE96100A24621 /* ViewProfileViewController.m */; };
+		B5DB046C21CDE96100A24621 /* ViewProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5DB046A21CDE96100A24621 /* ViewProfileViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		030B4060FED5CE83781FE03A /* Pods_Mioto_objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mioto_objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32A79D897A50ED63CF50B740 /* Pods-Mioto_objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mioto_objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mioto_objc/Pods-Mioto_objc.release.xcconfig"; sourceTree = "<group>"; };
+		3C11991BB53427AF3BC75F1F /* Pods-Mioto_objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mioto_objc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mioto_objc/Pods-Mioto_objc.debug.xcconfig"; sourceTree = "<group>"; };
+		B51E47F121C388FF00BAFB21 /* EditProfileViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewViewController.h; sourceTree = "<group>"; };
+		B51E47F221C388FF00BAFB21 /* EditProfileViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewViewController.m; sourceTree = "<group>"; };
+		B51E47F321C388FF00BAFB21 /* EditProfileViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewViewController.xib; sourceTree = "<group>"; };
+		B5303CF221BA536500F92B12 /* LightGrayLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightGrayLabel.h; sourceTree = "<group>"; };
+		B5303CF321BA536500F92B12 /* LightGrayLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightGrayLabel.m; sourceTree = "<group>"; };
+		B5303CF721BA542600F92B12 /* BlackLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlackLabel.h; sourceTree = "<group>"; };
+		B5303CF821BA542600F92B12 /* BlackLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlackLabel.m; sourceTree = "<group>"; };
+		B53D013D21B28DF100544CCB /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		B53D013E21B28DF100544CCB /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		B53D013F21B28DF100544CCB /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		B54F46B621B67A0300F2B328 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B54F46B721B67A0300F2B328 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		B54F46B821B67A0300F2B328 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		B54F46BB21B685FC00F2B328 /* SignupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		B54F46BC21B685FC00F2B328 /* SignupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		B54F46BD21B685FC00F2B328 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		B56FCE5C21C0EBF8001404F7 /* AlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertHelper.h; sourceTree = "<group>"; };
+		B56FCE5D21C0EBF8001404F7 /* AlertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertHelper.m; sourceTree = "<group>"; };
+		B574550721BA756400F3254F /* Menu_1_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu_1_ViewController.h; sourceTree = "<group>"; };
+		B574550821BA756400F3254F /* Menu_1_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Menu_1_ViewController.m; sourceTree = "<group>"; };
+		B574550921BA756400F3254F /* Menu_1_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Menu_1_ViewController.xib; sourceTree = "<group>"; };
+		B576A57521BFB66D00887517 /* Profile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		B576A57621BFB66D00887517 /* Profile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		B59F4B8921AE7DFE00F3D7DB /* Mioto_objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mioto_objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59F4B8C21AE7DFE00F3D7DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B59F4B8D21AE7DFE00F3D7DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B59F4B9521AE7DFF00F3D7DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B59F4B9821AE7DFF00F3D7DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B59F4B9A21AE7DFF00F3D7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B59F4B9B21AE7DFF00F3D7DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B59F4BAE21AE7EBF00F3D7DB /* BaseLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
+		B59F4BAF21AE7EBF00F3D7DB /* BaseLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
+		B5A0056B21AEA9E700F02EC6 /* CheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
+		B5A0056C21AEA9E700F02EC6 /* CheckBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBox.m; sourceTree = "<group>"; };
+		B5AD789421BB671C006E77C9 /* AccountBusiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountBusiness.h; sourceTree = "<group>"; };
+		B5AD789521BB671C006E77C9 /* AccountBusiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountBusiness.m; sourceTree = "<group>"; };
+		B5B9B79421B239EB00A70BA1 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		B5B9B79521B239EB00A70BA1 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		B5B9B79721B23B5B00A70BA1 /* SigninViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
+		B5B9B79821B23B5B00A70BA1 /* SigninViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
+		B5B9B79921B23B5B00A70BA1 /* SigninViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
+		B5C60C0721C3C006003DF375 /* PickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerView.h; sourceTree = "<group>"; };
+		B5C60C0821C3C006003DF375 /* PickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerView.m; sourceTree = "<group>"; };
+		B5DB046521CDD17700A24621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5DB046821CDE96100A24621 /* ViewProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewProfileViewController.h; sourceTree = "<group>"; };
+		B5DB046921CDE96100A24621 /* ViewProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewProfileViewController.m; sourceTree = "<group>"; };
+		B5DB046A21CDE96100A24621 /* ViewProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewProfileViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B59F4B8621AE7DFE00F3D7DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AABFAF936AFA3A7C0A397B62 /* Pods_Mioto_objc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4952E301682B8D0452FDE416 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C11991BB53427AF3BC75F1F /* Pods-Mioto_objc.debug.xcconfig */,
+				32A79D897A50ED63CF50B740 /* Pods-Mioto_objc.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B50C564C21AE8C59006689D7 /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				B5A0056B21AEA9E700F02EC6 /* CheckBox.h */,
+				B5A0056C21AEA9E700F02EC6 /* CheckBox.m */,
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
+		B51E47F021C388D600BAFB21 /* EditProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				B51E47F121C388FF00BAFB21 /* EditProfileViewViewController.h */,
+				B51E47F221C388FF00BAFB21 /* EditProfileViewViewController.m */,
+				B51E47F321C388FF00BAFB21 /* EditProfileViewViewController.xib */,
+			);
+			path = EditProfileView;
+			sourceTree = "<group>";
+		};
+		B51E47F621C391F100BAFB21 /* BaseTextField */ = {
+			isa = PBXGroup;
+			children = (
+				B51E47F721C3920F00BAFB21 /* BaseTextField_ */,
+			);
+			path = BaseTextField;
+			sourceTree = "<group>";
+		};
+		B51E47F721C3920F00BAFB21 /* BaseTextField_ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseTextField_;
+			sourceTree = "<group>";
+		};
+		B5303CF021BA52C400F92B12 /* BaseLabel_ */ = {
+			isa = PBXGroup;
+			children = (
+				B59F4BAE21AE7EBF00F3D7DB /* BaseLabel.h */,
+				B59F4BAF21AE7EBF00F3D7DB /* BaseLabel.m */,
+			);
+			path = BaseLabel_;
+			sourceTree = "<group>";
+		};
+		B5303CF121BA534300F92B12 /* LightGrayLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B5303CF221BA536500F92B12 /* LightGrayLabel.h */,
+				B5303CF321BA536500F92B12 /* LightGrayLabel.m */,
+			);
+			path = LightGrayLabel;
+			sourceTree = "<group>";
+		};
+		B5303CF621BA53F400F92B12 /* BlackLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B5303CF721BA542600F92B12 /* BlackLabel.h */,
+				B5303CF821BA542600F92B12 /* BlackLabel.m */,
+			);
+			path = BlackLabel;
+			sourceTree = "<group>";
+		};
+		B53D013C21B28DB800544CCB /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				B53D013D21B28DF100544CCB /* ForgotPasswordViewController.h */,
+				B53D013E21B28DF100544CCB /* ForgotPasswordViewController.m */,
+				B53D013F21B28DF100544CCB /* ForgotPasswordViewController.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		B54F46B521B679EB00F2B328 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				B54F46B621B67A0300F2B328 /* ProfileViewController.h */,
+				B54F46B721B67A0300F2B328 /* ProfileViewController.m */,
+				B54F46B821B67A0300F2B328 /* ProfileViewController.xib */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		B56FCE5B21C0EBDA001404F7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B5C60C0421C3BFB3003DF375 /* PickerView */,
+				B5C60C0621C3BFBF003DF375 /* Alert */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B574550621BA754900F3254F /* Menu_1 */ = {
+			isa = PBXGroup;
+			children = (
+				B574550721BA756400F3254F /* Menu_1_ViewController.h */,
+				B574550821BA756400F3254F /* Menu_1_ViewController.m */,
+				B574550921BA756400F3254F /* Menu_1_ViewController.xib */,
+			);
+			path = Menu_1;
+			sourceTree = "<group>";
+		};
+		B576A56B21BFB36C00887517 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B576A57521BFB66D00887517 /* Profile.h */,
+				B576A57621BFB66D00887517 /* Profile.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B59F4B8021AE7DFE00F3D7DB = {
+			isa = PBXGroup;
+			children = (
+				B59F4B8B21AE7DFE00F3D7DB /* Mioto_objc */,
+				B59F4B8A21AE7DFE00F3D7DB /* Products */,
+				4952E301682B8D0452FDE416 /* Pods */,
+				BD524E661FA03E20D265C075 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B59F4B8A21AE7DFE00F3D7DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B59F4B8921AE7DFE00F3D7DB /* Mioto_objc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B59F4B8B21AE7DFE00F3D7DB /* Mioto_objc */ = {
+			isa = PBXGroup;
+			children = (
+				B59F4B8C21AE7DFE00F3D7DB /* AppDelegate.h */,
+				B59F4B8D21AE7DFE00F3D7DB /* AppDelegate.m */,
+				B56FCE5B21C0EBDA001404F7 /* Helper */,
+				B576A56B21BFB36C00887517 /* Model */,
+				B5AD789321BB6686006E77C9 /* DataBase */,
+				B574550621BA754900F3254F /* Menu_1 */,
+				B5AD789221BB663C006E77C9 /* UserScreens */,
+				B5AD789121BB660C006E77C9 /* BaseClass */,
+				B5AD789021BB65E5006E77C9 /* AuthScreens */,
+				B59F4B9521AE7DFF00F3D7DB /* Assets.xcassets */,
+				B59F4B9721AE7DFF00F3D7DB /* LaunchScreen.storyboard */,
+				B5DB046521CDD17700A24621 /* GoogleService-Info.plist */,
+				B59F4B9A21AE7DFF00F3D7DB /* Info.plist */,
+				B59F4B9B21AE7DFF00F3D7DB /* main.m */,
+			);
+			path = Mioto_objc;
+			sourceTree = "<group>";
+		};
+		B59F4BA221AE7E0C00F3D7DB /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				B54F46BB21B685FC00F2B328 /* SignupViewController.h */,
+				B54F46BC21B685FC00F2B328 /* SignupViewController.m */,
+				B54F46BD21B685FC00F2B328 /* SignupViewController.xib */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		B59F4BAC21AE7E7A00F3D7DB /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				B5B9B79721B23B5B00A70BA1 /* SigninViewController.h */,
+				B5B9B79821B23B5B00A70BA1 /* SigninViewController.m */,
+				B5B9B79921B23B5B00A70BA1 /* SigninViewController.xib */,
+			);
+			path = SignInView;
+			sourceTree = "<group>";
+		};
+		B59F4BAD21AE7EA500F3D7DB /* BaseLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B5303CF621BA53F400F92B12 /* BlackLabel */,
+				B5303CF121BA534300F92B12 /* LightGrayLabel */,
+				B5303CF021BA52C400F92B12 /* BaseLabel_ */,
+			);
+			path = BaseLabel;
+			sourceTree = "<group>";
+		};
+		B5AD789021BB65E5006E77C9 /* AuthScreens */ = {
+			isa = PBXGroup;
+			children = (
+				B53D013C21B28DB800544CCB /* ForgotPassword */,
+				B59F4BAC21AE7E7A00F3D7DB /* SignInView */,
+				B59F4BA221AE7E0C00F3D7DB /* SignUpView */,
+			);
+			name = AuthScreens;
+			sourceTree = "<group>";
+		};
+		B5AD789121BB660C006E77C9 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				B51E47F621C391F100BAFB21 /* BaseTextField */,
+				B5B9B79321B239D600A70BA1 /* BaseViewController */,
+				B59F4BAD21AE7EA500F3D7DB /* BaseLabel */,
+				B50C564C21AE8C59006689D7 /* Checkbox */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		B5AD789221BB663C006E77C9 /* UserScreens */ = {
+			isa = PBXGroup;
+			children = (
+				B5DB046721CDE92B00A24621 /* ViewProfileImageViewController */,
+				B51E47F021C388D600BAFB21 /* EditProfileView */,
+				B54F46B521B679EB00F2B328 /* ProfileView */,
+			);
+			path = UserScreens;
+			sourceTree = "<group>";
+		};
+		B5AD789321BB6686006E77C9 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				B5AD789421BB671C006E77C9 /* AccountBusiness.h */,
+				B5AD789521BB671C006E77C9 /* AccountBusiness.m */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		B5B9B79321B239D600A70BA1 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B5B9B79421B239EB00A70BA1 /* BaseViewController.h */,
+				B5B9B79521B239EB00A70BA1 /* BaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		B5C60C0421C3BFB3003DF375 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				B5C60C0721C3C006003DF375 /* PickerView.h */,
+				B5C60C0821C3C006003DF375 /* PickerView.m */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
+		B5C60C0621C3BFBF003DF375 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B56FCE5C21C0EBF8001404F7 /* AlertHelper.h */,
+				B56FCE5D21C0EBF8001404F7 /* AlertHelper.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		B5DB046721CDE92B00A24621 /* ViewProfileImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B5DB046821CDE96100A24621 /* ViewProfileViewController.h */,
+				B5DB046921CDE96100A24621 /* ViewProfileViewController.m */,
+				B5DB046A21CDE96100A24621 /* ViewProfileViewController.xib */,
+			);
+			path = ViewProfileImageViewController;
+			sourceTree = "<group>";
+		};
+		BD524E661FA03E20D265C075 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				030B4060FED5CE83781FE03A /* Pods_Mioto_objc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B59F4B8821AE7DFE00F3D7DB /* Mioto_objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B59F4B9F21AE7DFF00F3D7DB /* Build configuration list for PBXNativeTarget "Mioto_objc" */;
+			buildPhases = (
+				35028622DC90AB07177B6F13 /* [CP] Check Pods Manifest.lock */,
+				B59F4B8521AE7DFE00F3D7DB /* Sources */,
+				B59F4B8621AE7DFE00F3D7DB /* Frameworks */,
+				B59F4B8721AE7DFE00F3D7DB /* Resources */,
+				86E113847137EE603E20933A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mioto_objc;
+			productName = Mioto_objc;
+			productReference = B59F4B8921AE7DFE00F3D7DB /* Mioto_objc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B59F4B8121AE7DFE00F3D7DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "TT Nguyen";
+				TargetAttributes = {
+					B59F4B8821AE7DFE00F3D7DB = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = B59F4B8421AE7DFE00F3D7DB /* Build configuration list for PBXProject "Mioto_objc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B59F4B8021AE7DFE00F3D7DB;
+			productRefGroup = B59F4B8A21AE7DFE00F3D7DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B59F4B8821AE7DFE00F3D7DB /* Mioto_objc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B59F4B8721AE7DFE00F3D7DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51E47F521C388FF00BAFB21 /* EditProfileViewViewController.xib in Resources */,
+				B54F46BA21B67A0300F2B328 /* ProfileViewController.xib in Resources */,
+				B5DB046621CDD17700A24621 /* GoogleService-Info.plist in Resources */,
+				B53D014121B28DF100544CCB /* ForgotPasswordViewController.xib in Resources */,
+				B574550B21BA756400F3254F /* Menu_1_ViewController.xib in Resources */,
+				B59F4B9921AE7DFF00F3D7DB /* LaunchScreen.storyboard in Resources */,
+				B5B9B79B21B23B5B00A70BA1 /* SigninViewController.xib in Resources */,
+				B5DB046C21CDE96100A24621 /* ViewProfileViewController.xib in Resources */,
+				B59F4B9621AE7DFF00F3D7DB /* Assets.xcassets in Resources */,
+				B54F46BF21B685FC00F2B328 /* SignupViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35028622DC90AB07177B6F13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mioto_objc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86E113847137EE603E20933A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mioto_objc/Pods-Mioto_objc-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mioto_objc/Pods-Mioto_objc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B59F4B8521AE7DFE00F3D7DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5303CF421BA536500F92B12 /* LightGrayLabel.m in Sources */,
+				B5C60C0921C3C006003DF375 /* PickerView.m in Sources */,
+				B5B9B79A21B23B5B00A70BA1 /* SigninViewController.m in Sources */,
+				B5A0056D21AEA9E700F02EC6 /* CheckBox.m in Sources */,
+				B574550A21BA756400F3254F /* Menu_1_ViewController.m in Sources */,
+				B5B9B79621B239EB00A70BA1 /* BaseViewController.m in Sources */,
+				B576A57721BFB66D00887517 /* Profile.m in Sources */,
+				B5DB046B21CDE96100A24621 /* ViewProfileViewController.m in Sources */,
+				B5303CF921BA542600F92B12 /* BlackLabel.m in Sources */,
+				B5AD789621BB671C006E77C9 /* AccountBusiness.m in Sources */,
+				B54F46BE21B685FC00F2B328 /* SignupViewController.m in Sources */,
+				B54F46B921B67A0300F2B328 /* ProfileViewController.m in Sources */,
+				B56FCE5E21C0EBF8001404F7 /* AlertHelper.m in Sources */,
+				B51E47F421C388FF00BAFB21 /* EditProfileViewViewController.m in Sources */,
+				B59F4BB021AE7EBF00F3D7DB /* BaseLabel.m in Sources */,
+				B53D014021B28DF100544CCB /* ForgotPasswordViewController.m in Sources */,
+				B59F4B9C21AE7DFF00F3D7DB /* main.m in Sources */,
+				B59F4B8E21AE7DFE00F3D7DB /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B59F4B9721AE7DFF00F3D7DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B59F4B9821AE7DFF00F3D7DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B59F4B9D21AE7DFF00F3D7DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B59F4B9E21AE7DFF00F3D7DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B59F4BA021AE7DFF00F3D7DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C11991BB53427AF3BC75F1F /* Pods-Mioto_objc.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4NA3RYS6C;
+				INFOPLIST_FILE = Mioto_objc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = trietnguyen.mioto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B59F4BA121AE7DFF00F3D7DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A79D897A50ED63CF50B740 /* Pods-Mioto_objc.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H4NA3RYS6C;
+				INFOPLIST_FILE = Mioto_objc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = trietnguyen.mioto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B59F4B8421AE7DFE00F3D7DB /* Build configuration list for PBXProject "Mioto_objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B59F4B9D21AE7DFF00F3D7DB /* Debug */,
+				B59F4B9E21AE7DFF00F3D7DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B59F4B9F21AE7DFF00F3D7DB /* Build configuration list for PBXNativeTarget "Mioto_objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B59F4BA021AE7DFF00F3D7DB /* Debug */,
+				B59F4BA121AE7DFF00F3D7DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B59F4B8121AE7DFE00F3D7DB /* Project object */;
+}
