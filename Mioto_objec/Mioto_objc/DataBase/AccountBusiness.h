@@ -42,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)resetPasswordWithEmail:(NSString*)email;
 - (void)loginWithFacebook;
 
+- (void) fbLinking;
 @property (nonatomic, weak) id<FireBaseListener> listener;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @end

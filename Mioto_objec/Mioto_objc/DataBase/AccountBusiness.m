@@ -8,6 +8,7 @@
 
 #import "AccountBusiness.h"
 #import "Menu_1_ViewController.h"
+#import "ProfileViewController.h"
 
 @interface AccountBusiness() {
     Profile* newUser;
@@ -55,22 +56,25 @@
 
 - (void)signinWithEmail:(NSString*)email
                password:(NSString*)pass {
+    FIRAuthCredential *credential =
+    [FIREmailAuthProvider credentialWithEmail:email
+                                     password:pass];
     
-    [[FIRAuth auth] signInWithEmail:email
-                           password:pass
-                         completion:^(FIRAuthDataResult * _Nullable authResult,
-                                      NSError * _Nullable error) {
-                             if (error != nil) {
-                                 if (self.listener) {
-                                     [self.listener AuthStatus:0];
-                                 }
-                             } else {
-                                 if (self.listener) {
-                                     [self.listener AuthStatus:1];
-                                 }
-                             }
-                         }];
-    
+    [[FIRAuth auth] signInAndRetrieveDataWithCredential:credential
+                                             completion:^(FIRAuthDataResult * _Nullable authResult,
+                                                          NSError * _Nullable error) {
+                                                 if (error) {
+                                                     if (error != nil) {
+                                                         if (self.listener) {
+                                                             [self.listener AuthStatus:0];
+                                                         }
+                                                     }
+                                                 } else {
+                                                     if (self.listener) {
+                                                         [self.listener AuthStatus:1];
+                                                     }
+                                                 }
+                                             }];
 }
 
 - (bool)didLogin {
@@ -156,7 +160,7 @@
                                                            [self.listener UploadProfileImageStatus:0];
                                                        }
                                                    } else {
-        
+                                                       
                                                        [riversRef downloadURLWithCompletion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
                                                            if (error != nil) {
                                                                NSLog(@"%@", error);
@@ -172,9 +176,13 @@
                                                }];
 }
 
+- (void)logoutFacebook {
+    FBSDKLoginManager *loginManager = [FBSDKLoginManager new];
+    [loginManager logOut];
+}
+
 //Define listener:  0: Login Error -1: Recieved data error
 - (void)loginWithFacebook {
-    
     Menu_1_ViewController *menu = [Menu_1_ViewController new];
     FBSDKLoginManager *loginManager = [FBSDKLoginManager new];
     [loginManager logInWithReadPermissions: @[@"public_profile", @"email"] fromViewController: menu handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
@@ -185,36 +193,94 @@
             }
             return;
         } else {
-            [self signinWithFirebase];
+            if ([FBSDKAccessToken currentAccessToken])
+            {
+                NSDictionary *param = @{@"fields" : @"email"};
+                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:param] startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                    if (!error) {
+                        NSLog(@"%@",result);
+                        [self signinWithFirebase:result[@"email"]];
+                    }
+                }];
+            }
         }
     }
      ];
 }
 
-- (void)signinWithFirebase {
+- (void)signinWithFirebase: (NSString*)email {
     FIRAuthCredential *credential = [FIRFacebookAuthProvider
                                      credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
+    [FBSDKAccessToken currentAccessToken];
     
-    [[FIRAuth auth] signInAndRetrieveDataWithCredential:credential
-                                             completion:^(FIRAuthDataResult * _Nullable authResult,
-                                                          NSError * _Nullable error) {
-                                                 if (error) {
-                                                     if (self.listener) {
-                                                         [self.listener LoginFbWithStatus:-1];
-                                                     }
-                                                     NSLog(@"%@", error.localizedDescription);
-                                                     return;
-                                                 }
-                                                 // User successfully signed in. Get user data from the FIRUser object
-                                                FIRUser *user = authResult.user;
-                                                
-                                                 [self saveDataWithEmail:user.email name:user.displayName dob:@"Chưa chọn" gender:@"Chưa chọn" imgURL: [user.photoURL.absoluteString stringByAppendingString:@"?type=large"] phoneNumber:@"Chưa chọn"];
-                                                
-                                                 if (self.listener) {
-                                                     [self.listener LoginFbWithStatus:1];
-                                                 }
-                                             }];
+    [[FIRAuth auth] fetchProvidersForEmail:email completion:^(NSArray<NSString *> * _Nullable providers, NSError * _Nullable error) {
+        if (providers) {
+            [FBSDKAccessToken currentAccessToken];
+            [[FIRAuth auth] signInAndRetrieveDataWithCredential:credential
+                                                     completion:^(FIRAuthDataResult * _Nullable authResult,
+                                                                  NSError * _Nullable error) {
+                                                         if (self.listener) {
+                                                             [self.listener LoginFbWithStatus:1];
+                                                         }
+                                                     }];
+            
+            NSLog(@"tai khoan da ton tai");
+        } else {
+            NSLog(@"tai khoan 0 ton tai");
+            [[FIRAuth auth] signInAndRetrieveDataWithCredential:credential
+                                                     completion:^(FIRAuthDataResult * _Nullable authResult,
+                                                                  NSError * _Nullable error) {
+                                                         if (error) {
+                                                             if (self.listener) {
+                                                                 [self.listener LoginFbWithStatus:-1];
+                                                             }
+                                                             NSLog(@"%@", error.localizedDescription);
+                                                             return;
+                                                         }
+                                                         FIRUser *user = authResult.user;
+                                                         
+                                                         NSLog(@"Don't have email");
+                                                         [self saveDataWithEmail:user.email name:user.displayName dob:@"Chưa chọn" gender:@"Chưa chọn" imgURL: [user.photoURL.absoluteString stringByAppendingString:@"?type=large"] phoneNumber:@"Chưa chọn"];
+                                                         
+                                                         if (self.listener) {
+                                                             [self.listener LoginFbWithStatus:1];
+                                                         }
+                
+        }];
+    }
+     }];
+    
+    
 }
+
+
+- (void) fbLinking {
+    ProfileViewController *menu = [ProfileViewController new];
+    FBSDKLoginManager *loginManager = [FBSDKLoginManager new];
+    [loginManager logInWithReadPermissions: @[@"public_profile", @"email"] fromViewController: menu handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            if (self.listener) {
+                [self.listener LoginFbWithStatus:0];
+            }
+            return;
+        } else {
+            FIRAuthCredential *credential = [FIRFacebookAuthProvider
+                                             credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
+            NSLog(@"%@", [[FIRAuth auth].currentUser uid]);
+            [[FIRAuth auth].currentUser linkAndRetrieveDataWithCredential:credential
+                                                               completion:^(FIRAuthDataResult *result, NSError *_Nullable error) {
+                                                                   if (error)
+                                                                       NSLog(@"FAIL");
+                                                                   else {
+                                                                       NSLog(@"SUCCESS");
+                                                                   }
+                                                               }];
+        }
+    }
+     ];
+}
+
 
 
 - (void)resetPasswordWithEmail:(NSString*)email {

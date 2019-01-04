@@ -26,6 +26,7 @@
     IBOutlet BlackLabel *ggStatus_text;
 }
 - (IBAction)logoutButton:(id)sender;
+- (IBAction)fbLinking:(id)sender;
 - (IBAction)editProfileButton:(id)sender;
 @end
 
@@ -68,7 +69,7 @@
     if ([[shareInstance getData] mUserImgUrl] != nil) {
         [profileImage sd_setImageWithURL: [NSURL URLWithString:[[shareInstance getData] mUserImgUrl]]];
     }
-     
+    
     username.text = user.mUserName;
     dob.text = user.mUserDateOfBirth;
     gender.text = user.mUserGender;
@@ -114,6 +115,10 @@
 
 - (IBAction)logoutButton:(id)sender {
     [shareInstance logout];
+}
+
+- (IBAction)fbLinking:(id)sender {
+    [shareInstance fbLinking];
 }
 
 - (IBAction)editProfileButton:(id)sender {
