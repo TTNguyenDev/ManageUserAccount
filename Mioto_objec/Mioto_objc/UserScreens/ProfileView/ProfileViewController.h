@@ -14,6 +14,8 @@
 #import "BlackLabel.h"
 #import "ViewProfileViewController.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "ForgotPasswordViewController.h"
+#import "DisplayAllFriends.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

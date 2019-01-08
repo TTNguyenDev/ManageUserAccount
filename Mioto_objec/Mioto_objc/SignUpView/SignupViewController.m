@@ -114,7 +114,7 @@
     } else if (status){
         [self->activeBar startAnimating];
         self->signup.hidden = true;
-        [shareInstance saveDataWithEmail: email.text name:username.text dob: @"Chưa chọn" gender: @"Chưa chọn" imgURL: @"https://firebasestorage.googleapis.com/v0/b/mymioto.appspot.com/o/UsersImg%2Fdefaultavatar.jpg?alt=media&token=d01ebb9c-bc62-469f-b709-db483bb0e284" phoneNumber: @""];
+        [shareInstance saveDataWithEmail: email.text name:username.text dob: @"Chưa chọn" gender: @"Chưa chọn" imgURL: @"https://firebasestorage.googleapis.com/v0/b/mymioto.appspot.com/o/UsersImg%2Fdefaultavatar.jpg?alt=media&token=d01ebb9c-bc62-469f-b709-db483bb0e284" phoneNumber: @"" fbLink:@"false" emailLink: @"true"];
         
         ProfileViewController *vc2 = [[ProfileViewController alloc] init];
         [self.navigationController pushViewController:vc2 animated:YES];

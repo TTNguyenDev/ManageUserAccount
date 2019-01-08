@@ -21,12 +21,16 @@
     IBOutlet UIImageView *emailStatus_img;
     IBOutlet BlackLabel *emailStatus_text;
     IBOutlet UIImageView *fbStatus_img;
-    IBOutlet BlackLabel *fbStatus_text;
+    IBOutlet UIButton *fbStatus_text;
     IBOutlet UIImageView *ggStatus_img;
-    IBOutlet BlackLabel *ggStatus_text;
+    IBOutlet UIButton *ggStatus_text;
+    
 }
+
+
 - (IBAction)logoutButton:(id)sender;
 - (IBAction)fbLinking:(id)sender;
+- (IBAction)ggLinking:(id)sender;
 - (IBAction)editProfileButton:(id)sender;
 @end
 
@@ -45,6 +49,18 @@
     self.navigationItem.backBarButtonItem.tintColor = UIColor.whiteColor;
 }
 
+- (void)setupBarButton {
+    UIBarButtonItem *Friends = [[UIBarButtonItem alloc]initWithTitle:@"Friends" style:UIBarButtonItemStylePlain target:self action:@selector(toggleSearch)];
+    Friends.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = Friends;
+
+}
+
+-(void)toggleSearch {
+    DisplayAllFriends *vc2 = [[DisplayAllFriends alloc] init];
+    [self.navigationController pushViewController:vc2 animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     shareInstance = [AccountBusiness sharedInstance];
@@ -57,6 +73,7 @@
     UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
     [singleTap setNumberOfTapsRequired:1];
     [profileImage addGestureRecognizer:singleTap];
+    [self setupBarButton];
 }
 
 -(void)singleTapping:(UIGestureRecognizer *)recognizer {
@@ -75,7 +92,7 @@
     gender.text = user.mUserGender;
     joinedDate.text = [@"Ngày tham gia: " stringByAppendingString:user.mUserJoinedDate];
     
-    if (user.mUserPhone.length == 0) {
+    if ([user.mUserPhone  isEqual: @"Chưa chọn"]) {
         phoneStatus_img.image = [UIImage imageNamed: @"WarningToSocial"];
         phoneStatus_text.text = @"Chưa xác thực";
     } else {
@@ -91,17 +108,29 @@
         emailStatus_text.text = @"Đã xác thực";
     }
     
-    //Default value
-    fbStatus_img.image = [UIImage imageNamed: @"WarningToSocial"];
-    fbStatus_text.text = @"Chưa xác thực";
+    if ([user.mFBLinking  isEqual: @"false"]) {
+        fbStatus_img.image = [UIImage imageNamed: @"WarningToSocial"];
+        [fbStatus_text setTitle:@"Chưa xác thực" forState:UIControlStateNormal];
+    } else {
+        fbStatus_img.image = [UIImage imageNamed: @"linkedToSocial"];
+        [fbStatus_text setTitle:@"Đã xác thực" forState:UIControlStateNormal];
+    }
     
-    ggStatus_img.image = [UIImage imageNamed: @"WarningToSocial"];
-    ggStatus_text.text = @"Chưa xác thực";
+    
+    //Default value
+    
+    if ([user.mEmailLinking  isEqual:  @"false"]) {
+        ggStatus_img.image = [UIImage imageNamed: @"WarningToSocial"];
+        [ggStatus_text setTitle:@"Chưa xác thực" forState:UIControlStateNormal];
+    } else {
+        ggStatus_img.image = [UIImage imageNamed: @"linkedToSocial"];
+        [ggStatus_text setTitle:@"Đã xác thực" forState:UIControlStateNormal];
+    }
 }
 
-- (void)AuthStatus:(int)status {
+- (void)LogOutStatus:(int)status {
     if (!status) {
-        [AlertHelper showAlertWithMessage:@"Đăng xuất đăng gặp vấn đề"];
+        [AlertHelper showAlertWithMessage:@"Đăng xuất đang gặp vấn đề"];
     } else {
         Menu_1_ViewController *vc2 = [[Menu_1_ViewController alloc] init];
         [self.navigationController pushViewController:vc2 animated:YES];
@@ -119,6 +148,51 @@
 
 - (IBAction)fbLinking:(id)sender {
     [shareInstance fbLinking];
+}
+
+- (IBAction)ggLinking:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Liên kết với tài khoản email"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        
+        textField.keyboardType = UIKeyboardTypeAlphabet;
+        textField.secureTextEntry = true;
+        textField.placeholder = @"Nhập vào mật khẩu";
+    }];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Hoàn tất"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action) {
+                                                         UITextField *textField = [alert.textFields firstObject];
+                                                         NSLog(@"password %@", textField.text);
+                                                         if (textField.text.length != 0) {
+                                                             [self->shareInstance emailLinking:textField.text];
+                                                         }
+                                                     }];
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)LinkingGGStatus:(int)status {
+    if (status) {
+        [AlertHelper showAlertWithMessage:@"Liên kết thành công"];
+        ggStatus_img.image = [UIImage imageNamed: @"linkedToSocial"];
+        [ggStatus_text setTitle:@"Đã xác thực" forState:UIControlStateNormal];
+    } else {
+        [AlertHelper showAlertWithMessage:@"Liên kết đã xảy ra lỗi"];
+    }
+}
+
+- (void)LinkingFBStatus:(int)status {
+    if (status) {
+        [AlertHelper showAlertWithMessage:@"Liên kết thành công"];
+        fbStatus_img.image = [UIImage imageNamed: @"linkedToSocial"];
+        [fbStatus_text setTitle:@"Đã xác thực" forState:UIControlStateNormal];
+    } else {
+        [AlertHelper showAlertWithMessage:@"Liên kết đã xảy ra lỗi"];
+    }
 }
 
 - (IBAction)editProfileButton:(id)sender {

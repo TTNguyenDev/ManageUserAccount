@@ -15,9 +15,10 @@
                 <outlet property="emailStatus_img" destination="a5p-kP-7Nq" id="JP2-lR-dUz"/>
                 <outlet property="emailStatus_text" destination="5Ho-kJ-LsV" id="Iz8-3L-vQE"/>
                 <outlet property="fbStatus_img" destination="G1z-jS-ae8" id="k8T-QN-KBV"/>
+                <outlet property="fbStatus_text" destination="pQ7-vd-YyC" id="SUG-VA-lNz"/>
                 <outlet property="gender" destination="rle-Kn-Opp" id="UBI-B1-3Jn"/>
                 <outlet property="ggStatus_img" destination="vj9-Hc-gUO" id="MuX-V4-91s"/>
-                <outlet property="ggStatus_text" destination="0db-pk-nIX" id="Yx8-r6-7gW"/>
+                <outlet property="ggStatus_text" destination="92T-L9-b7P" id="9TA-7M-a89"/>
                 <outlet property="joinedDate" destination="Eaj-x7-J7R" id="oKA-Be-9aP"/>
                 <outlet property="phoneStatus_img" destination="fA7-rk-LqE" id="D9m-7x-CM2"/>
                 <outlet property="phoneStatus_text" destination="66S-ED-85v" id="oyh-E0-1PU"/>
@@ -318,12 +319,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa xác thực" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0db-pk-nIX" customClass="BlackLabel">
-                                                    <rect key="frame" x="290" y="131.33333333333337" width="111" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedToSocial" translatesAutoresizingMaskIntoConstraints="NO" id="vj9-Hc-gUO">
                                                     <rect key="frame" x="166" y="127" width="30" height="30"/>
                                                     <constraints>
@@ -337,21 +332,34 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQ7-vd-YyC">
-                                                    <rect key="frame" x="291" y="89" width="110" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="Chưa xác thực"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQ7-vd-YyC">
+                                                    <rect key="frame" x="291" y="88.666666666666629" width="111" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Chưa xác thực">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="fbLinking:" destination="-1" eventType="touchUpInside" id="AqL-Vy-ymk"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92T-L9-b7P">
+                                                    <rect key="frame" x="291" y="125.66666666666663" width="111" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Chưa xác thực">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="ggLinking:" destination="-1" eventType="touchUpInside" id="nkA-WL-HVe"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="pQ7-vd-YyC" firstAttribute="centerY" secondItem="ccy-1N-Sy7" secondAttribute="centerY" id="2nT-ED-HfE"/>
-                                                <constraint firstAttribute="trailing" secondItem="0db-pk-nIX" secondAttribute="trailing" constant="13" id="5I3-1M-7Oi"/>
+                                                <constraint firstAttribute="trailing" secondItem="92T-L9-b7P" secondAttribute="trailing" constant="12" id="4DK-sY-oLU"/>
                                                 <constraint firstItem="66S-ED-85v" firstAttribute="baseline" secondItem="76X-vY-fu4" secondAttribute="baseline" id="720-qX-nOZ"/>
                                                 <constraint firstItem="4xt-8b-LKU" firstAttribute="leading" secondItem="BX6-Se-Msx" secondAttribute="leading" constant="15" id="AnF-rP-6f3"/>
+                                                <constraint firstItem="92T-L9-b7P" firstAttribute="centerY" secondItem="uXh-X5-Hyk" secondAttribute="centerY" id="BAV-78-pKw"/>
                                                 <constraint firstItem="uXh-X5-Hyk" firstAttribute="top" secondItem="ccy-1N-Sy7" secondAttribute="bottom" constant="15" id="HG0-vE-uxK"/>
                                                 <constraint firstAttribute="bottom" secondItem="uXh-X5-Hyk" secondAttribute="bottom" constant="20" id="KMe-IG-czt"/>
                                                 <constraint firstItem="a5p-kP-7Nq" firstAttribute="leading" secondItem="4xt-8b-LKU" secondAttribute="trailing" constant="104" id="Mzh-a2-XR4"/>
@@ -360,18 +368,16 @@
                                                 <constraint firstItem="76X-vY-fu4" firstAttribute="top" secondItem="BX6-Se-Msx" secondAttribute="top" constant="20" id="OZI-ku-oHG"/>
                                                 <constraint firstItem="ccy-1N-Sy7" firstAttribute="leading" secondItem="BX6-Se-Msx" secondAttribute="leading" constant="14" id="REU-PF-AHK"/>
                                                 <constraint firstItem="4xt-8b-LKU" firstAttribute="top" secondItem="76X-vY-fu4" secondAttribute="bottom" constant="15" id="Tnv-YW-wvX"/>
-                                                <constraint firstItem="0db-pk-nIX" firstAttribute="centerY" secondItem="vj9-Hc-gUO" secondAttribute="centerY" id="TyQ-ag-8Hc"/>
                                                 <constraint firstItem="vj9-Hc-gUO" firstAttribute="leading" secondItem="uXh-X5-Hyk" secondAttribute="trailing" constant="90" id="WPa-ui-Gdt"/>
                                                 <constraint firstItem="G1z-jS-ae8" firstAttribute="leading" secondItem="ccy-1N-Sy7" secondAttribute="trailing" constant="68" id="XYN-MU-XrS"/>
-                                                <constraint firstItem="pQ7-vd-YyC" firstAttribute="leading" secondItem="G1z-jS-ae8" secondAttribute="trailing" constant="95" id="ctV-n4-yRG"/>
-                                                <constraint firstItem="0db-pk-nIX" firstAttribute="baseline" secondItem="uXh-X5-Hyk" secondAttribute="baseline" id="eNi-Xx-mNg"/>
                                                 <constraint firstItem="fA7-rk-LqE" firstAttribute="leading" secondItem="76X-vY-fu4" secondAttribute="trailing" constant="64" id="eqG-BY-8pZ"/>
                                                 <constraint firstItem="5Ho-kJ-LsV" firstAttribute="centerY" secondItem="a5p-kP-7Nq" secondAttribute="centerY" id="g5z-Ze-uDg"/>
                                                 <constraint firstItem="G1z-jS-ae8" firstAttribute="centerY" secondItem="ccy-1N-Sy7" secondAttribute="centerY" id="hLq-UA-VSZ"/>
+                                                <constraint firstItem="vj9-Hc-gUO" firstAttribute="centerY" secondItem="uXh-X5-Hyk" secondAttribute="centerY" id="nCd-wV-Sd3"/>
                                                 <constraint firstItem="ccy-1N-Sy7" firstAttribute="top" secondItem="4xt-8b-LKU" secondAttribute="bottom" constant="15" id="oh4-RG-vlV"/>
                                                 <constraint firstItem="5Ho-kJ-LsV" firstAttribute="baseline" secondItem="4xt-8b-LKU" secondAttribute="baseline" id="ovJ-HJ-eL4"/>
+                                                <constraint firstAttribute="trailing" secondItem="pQ7-vd-YyC" secondAttribute="trailing" constant="12" id="pNo-FQ-4c7"/>
                                                 <constraint firstItem="76X-vY-fu4" firstAttribute="leading" secondItem="BX6-Se-Msx" secondAttribute="leading" constant="15" id="smB-vj-ZuG"/>
-                                                <constraint firstAttribute="trailing" secondItem="pQ7-vd-YyC" secondAttribute="trailing" constant="13" id="tzb-SR-ktO"/>
                                                 <constraint firstAttribute="trailing" secondItem="66S-ED-85v" secondAttribute="trailing" constant="12" id="vI7-lZ-mel"/>
                                                 <constraint firstItem="66S-ED-85v" firstAttribute="centerY" secondItem="fA7-rk-LqE" secondAttribute="centerY" id="zqm-eY-82L"/>
                                             </constraints>

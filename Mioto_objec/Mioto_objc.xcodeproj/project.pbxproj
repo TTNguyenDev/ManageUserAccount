@@ -28,6 +28,10 @@
 		B59F4B9C21AE7DFF00F3D7DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F4B9B21AE7DFF00F3D7DB /* main.m */; };
 		B59F4BB021AE7EBF00F3D7DB /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59F4BAF21AE7EBF00F3D7DB /* BaseLabel.m */; };
 		B5A0056D21AEA9E700F02EC6 /* CheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A0056C21AEA9E700F02EC6 /* CheckBox.m */; };
+		B5A21E8821E33D58007789DE /* DisplayAllFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A21E8621E33D58007789DE /* DisplayAllFriends.m */; };
+		B5A21E8921E33D58007789DE /* DisplayAllFriends.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A21E8721E33D58007789DE /* DisplayAllFriends.xib */; };
+		B5A21E9121E34B66007789DE /* DisplayAllUsersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A21E8F21E34B66007789DE /* DisplayAllUsersCell.m */; };
+		B5A21E9221E34B66007789DE /* DisplayAllUsersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A21E9021E34B66007789DE /* DisplayAllUsersCell.xib */; };
 		B5AD789621BB671C006E77C9 /* AccountBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AD789521BB671C006E77C9 /* AccountBusiness.m */; };
 		B5B9B79621B239EB00A70BA1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B9B79521B239EB00A70BA1 /* BaseViewController.m */; };
 		B5B9B79A21B23B5B00A70BA1 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B9B79821B23B5B00A70BA1 /* SigninViewController.m */; };
@@ -76,6 +80,12 @@
 		B59F4BAF21AE7EBF00F3D7DB /* BaseLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
 		B5A0056B21AEA9E700F02EC6 /* CheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
 		B5A0056C21AEA9E700F02EC6 /* CheckBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBox.m; sourceTree = "<group>"; };
+		B5A21E8521E33D58007789DE /* DisplayAllFriends.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayAllFriends.h; sourceTree = "<group>"; };
+		B5A21E8621E33D58007789DE /* DisplayAllFriends.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayAllFriends.m; sourceTree = "<group>"; };
+		B5A21E8721E33D58007789DE /* DisplayAllFriends.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayAllFriends.xib; sourceTree = "<group>"; };
+		B5A21E8E21E34B66007789DE /* DisplayAllUsersCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayAllUsersCell.h; sourceTree = "<group>"; };
+		B5A21E8F21E34B66007789DE /* DisplayAllUsersCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayAllUsersCell.m; sourceTree = "<group>"; };
+		B5A21E9021E34B66007789DE /* DisplayAllUsersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayAllUsersCell.xib; sourceTree = "<group>"; };
 		B5AD789421BB671C006E77C9 /* AccountBusiness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountBusiness.h; sourceTree = "<group>"; };
 		B5AD789521BB671C006E77C9 /* AccountBusiness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountBusiness.m; sourceTree = "<group>"; };
 		B5B9B79421B239EB00A70BA1 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -290,6 +300,27 @@
 			path = BaseLabel;
 			sourceTree = "<group>";
 		};
+		B5A21E8121E33CB7007789DE /* DisplayAllUsers */ = {
+			isa = PBXGroup;
+			children = (
+				B5A21E8A21E34016007789DE /* DisplayAllUsersCell */,
+				B5A21E8521E33D58007789DE /* DisplayAllFriends.h */,
+				B5A21E8621E33D58007789DE /* DisplayAllFriends.m */,
+				B5A21E8721E33D58007789DE /* DisplayAllFriends.xib */,
+			);
+			path = DisplayAllUsers;
+			sourceTree = "<group>";
+		};
+		B5A21E8A21E34016007789DE /* DisplayAllUsersCell */ = {
+			isa = PBXGroup;
+			children = (
+				B5A21E8E21E34B66007789DE /* DisplayAllUsersCell.h */,
+				B5A21E8F21E34B66007789DE /* DisplayAllUsersCell.m */,
+				B5A21E9021E34B66007789DE /* DisplayAllUsersCell.xib */,
+			);
+			path = DisplayAllUsersCell;
+			sourceTree = "<group>";
+		};
 		B5AD789021BB65E5006E77C9 /* AuthScreens */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +345,7 @@
 		B5AD789221BB663C006E77C9 /* UserScreens */ = {
 			isa = PBXGroup;
 			children = (
+				B5A21E8121E33CB7007789DE /* DisplayAllUsers */,
 				B5DB046721CDE92B00A24621 /* ViewProfileImageViewController */,
 				B51E47F021C388D600BAFB21 /* EditProfileView */,
 				B54F46B521B679EB00F2B328 /* ProfileView */,
@@ -437,11 +469,13 @@
 				B51E47F521C388FF00BAFB21 /* EditProfileViewViewController.xib in Resources */,
 				B54F46BA21B67A0300F2B328 /* ProfileViewController.xib in Resources */,
 				B5DB046621CDD17700A24621 /* GoogleService-Info.plist in Resources */,
+				B5A21E8921E33D58007789DE /* DisplayAllFriends.xib in Resources */,
 				B53D014121B28DF100544CCB /* ForgotPasswordViewController.xib in Resources */,
 				B574550B21BA756400F3254F /* Menu_1_ViewController.xib in Resources */,
 				B59F4B9921AE7DFF00F3D7DB /* LaunchScreen.storyboard in Resources */,
 				B5B9B79B21B23B5B00A70BA1 /* SigninViewController.xib in Resources */,
 				B5DB046C21CDE96100A24621 /* ViewProfileViewController.xib in Resources */,
+				B5A21E9221E34B66007789DE /* DisplayAllUsersCell.xib in Resources */,
 				B59F4B9621AE7DFF00F3D7DB /* Assets.xcassets in Resources */,
 				B54F46BF21B685FC00F2B328 /* SignupViewController.xib in Resources */,
 			);
@@ -533,6 +567,8 @@
 				B5B9B79621B239EB00A70BA1 /* BaseViewController.m in Sources */,
 				B576A57721BFB66D00887517 /* Profile.m in Sources */,
 				B5DB046B21CDE96100A24621 /* ViewProfileViewController.m in Sources */,
+				B5A21E8821E33D58007789DE /* DisplayAllFriends.m in Sources */,
+				B5A21E9121E34B66007789DE /* DisplayAllUsersCell.m in Sources */,
 				B5303CF921BA542600F92B12 /* BlackLabel.m in Sources */,
 				B5AD789621BB671C006E77C9 /* AccountBusiness.m in Sources */,
 				B54F46BE21B685FC00F2B328 /* SignupViewController.m in Sources */,

@@ -23,11 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString* mUserName;
 @property (strong, nonatomic) NSString* mUserPhone;
 @property (strong, nonatomic) NSString* mUserJoinedDate;
+@property (strong, nonatomic) NSString* mFBLinking;
+@property (strong, nonatomic) NSString* mEmailLinking;
 
-- (instancetype) initWithName:(NSString*)username email:(NSString*)email uid:(NSString*)uid profileImage:(NSString*)image dob:(NSString*)dob gender:(NSString *)gender phone:(NSString*)phone joinedDate:(NSString*)date;
-
-
-
+- (instancetype) initWithName:(NSString*)username email:(NSString*)email uid:(NSString*)uid profileImage:(NSString*)image dob:(NSString*)dob gender:(NSString *)gender phone:(NSString*)phone joinedDate:(NSString*)date fb:(NSString*)fbLink email:(NSString*) emailLink;
+- (instancetype) transformUser:(NSDictionary*) dict;
 @end
 
 NS_ASSUME_NONNULL_END

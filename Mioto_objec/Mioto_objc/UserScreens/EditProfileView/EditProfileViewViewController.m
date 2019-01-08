@@ -18,7 +18,8 @@
     IBOutlet UITextField *mGender;
     IBOutlet UITextField *mPhoneNumber;
 }
-- (IBAction)updateUserInfo:(id)sender;
+- (IBAction)updateData:(id)sender;
+
 
 @end
 
@@ -83,27 +84,11 @@
     mDob.text = [dateFormatter stringFromDate:datePicker.date];
 }
 
--(void)check {
-    if (mName.text.length == 0) {
-        [AlertHelper showAlertWithMessage:@"Nhập tên của bạn"];
-    }
-    
-    if (mDob.text.length == 0) {
-        [AlertHelper showAlertWithMessage:@"Vui lòng chọn ngày sinh"];
-    }
-    
-    if (mGender.text.length == 0) {
-        [AlertHelper showAlertWithMessage:@"Vui lòng nhập giới tính"];
-    }
-}
-
-- (IBAction)updateUserInfo:(id)sender {
+- (IBAction)updateData:(id)sender {
     [shareInstance updateDataWithName:mName.text dob:mDob.text gender:mGender.text imgURL: @"" phoneNumber: mPhoneNumber.text];
     ProfileViewController *vc2 = [[ProfileViewController alloc] init];
     [self.navigationController pushViewController:vc2 animated:YES];
 }
-
-
 @end
 
 

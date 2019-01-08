@@ -11,7 +11,6 @@
 @interface Menu_1_ViewController () <FireBaseListener> {
     IBOutlet UIButton *createAccount;
     AccountBusiness *shareInstance;
-    
 }
 
 - (IBAction)SigninButton:(id)sender;

@@ -16,7 +16,7 @@
 //NSString* mDob;
 //bool gender; //Define 1 is male 0 is female
 
-- (instancetype) initWithName:(NSString *)username email:(NSString *)email uid:(NSString *)uid profileImage:(NSString *)image dob:(NSString *)dob gender:(NSString *)gender phone:(NSString*)phone joinedDate:(NSString*)date {
+- (instancetype) initWithName:(NSString *)username email:(NSString *)email uid:(NSString *)uid profileImage:(NSString *)image dob:(NSString *)dob gender:(NSString *)gender phone:(NSString*)phone joinedDate:(NSString*)date fb:(NSString*)fbLink email:(NSString*) emailLink {
     self = [super init];
     if (self) {
         _mUserName = username;
@@ -27,7 +27,24 @@
         _mUserGender = gender;
         _mUserPhone = phone;
         _mUserJoinedDate = date;
-        
+        _mFBLinking = fbLink;
+        _mEmailLinking = emailLink;
+    }
+    return self;
+}
+
+- (instancetype) transformUser:(NSDictionary*) dict {
+    if (self) {
+        _mUserName = dict[@"mUserName"];
+        _mUserEmail = dict[@"mUserEmail"];
+        _mUserID = dict[@"mUserID"];
+        _mUserImgUrl = dict[@"mUserImgUrl"];
+        _mUserDateOfBirth = dict[@"mUserDateOfBirth"];
+        _mUserGender = dict[@"mUserGender"];
+        _mUserPhone = dict[@"mUserPhone"];
+        _mUserJoinedDate = dict[@"mUserJoinedDate"];
+        _mFBLinking = dict[@"mFBLinking"];
+        _mEmailLinking = dict[@"mEmailLinking"];
     }
     return self;
 }

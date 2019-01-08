@@ -193,7 +193,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="updateUserInfo:" destination="-1" eventType="touchUpInside" id="myw-nC-4F7"/>
+                                <action selector="updateData:" destination="-1" eventType="touchUpInside" id="dDU-fe-1i9"/>
                             </connections>
                         </button>
                     </subviews>

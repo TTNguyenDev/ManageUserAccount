@@ -19,5 +19,4 @@
     MDCSnackbarManager.messageFont = [UIFont systemFontOfSize:18];
 }
 
-
 @end

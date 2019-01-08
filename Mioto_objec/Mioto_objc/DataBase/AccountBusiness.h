@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didSendRequestToResetPassword:(int)status;
 - (void)UploadProfileImageStatus:(int)status;
 - (void)LoginFbWithStatus:(int)status;
+- (void)LinkingFBStatus:(int)status;
+- (void)LinkingGGStatus:(int)status;
+- (void)LogOutStatus:(int)status;
+- (void)successProfileWith:(Profile*)profile;
 @end
 
 @interface AccountBusiness : NSObject
@@ -33,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
                password:(NSString*)pass;
 - (void)signinWithEmail:(NSString*)email
                password:(NSString*)pass;
-- (void)saveDataWithEmail:(NSString*)email name:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number;
+- (void)saveDataWithEmail:(NSString*)email name:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number fbLink:(NSString*)fbLink emailLink:(NSString*)emailLink;
 - (void)updateDataWithName:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number;
 - (void)fetchData;
 - (Profile*)getData;
@@ -41,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)logout;
 - (void)resetPasswordWithEmail:(NSString*)email;
 - (void)loginWithFacebook;
+- (void) emailLinking:(NSString*) password;
+- (void)fetchAllData;
 
 - (void) fbLinking;
 @property (nonatomic, weak) id<FireBaseListener> listener;
