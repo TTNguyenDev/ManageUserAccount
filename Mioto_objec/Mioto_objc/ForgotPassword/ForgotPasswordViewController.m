@@ -8,8 +8,8 @@
 
 #import "ForgotPasswordViewController.h"
 
-@interface ForgotPasswordViewController () <FireBaseListener> {
-    AccountBusiness *shareInstance;
+@interface ForgotPasswordViewController () <AuthListener> {
+    AuthApi *authInstance;
     IBOutlet UITextField *email;
     IBOutlet UIButton *reset;
 }
@@ -24,11 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    shareInstance = [AccountBusiness sharedInstance];
-    shareInstance.listener = self;
+    authInstance = [AuthApi sharedInstance];
+    authInstance.listener = self;
 }
 
-- (void)didSendRequestToResetPassword:(int)status {
+- (void)AuthStatus:(int)status {
     if (status == 0) {
         [AlertHelper showAlertWithMessage:@"Đã xảy ra lỗi khi đặt lại mật khẩu !"];
         email.text = @"";
@@ -49,7 +49,7 @@
 
 - (IBAction)resetButton:(id)sender {
     if (email.text.length != 0)
-        [shareInstance resetPasswordWithEmail:email.text];
+        [authInstance resetPasswordWithEmail:email.text];
     else
         [AlertHelper showAlertWithMessage:@"Vui lòng nhập email để đặt lại mật khẩu"];
 }

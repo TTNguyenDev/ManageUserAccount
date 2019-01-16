@@ -8,9 +8,10 @@
 
 #import "SignupViewController.h"
 
-@interface SignupViewController() <CheckBoxListener, FireBaseListener>  {
+@interface SignupViewController() <CheckBoxListener, AuthListener, FireBaseListener>  {
     IBOutlet CheckBox *termPrivacy_checkbox_00;
     IBOutlet CheckBox *termPrivacy_checkbox_01;
+    AuthApi *authInstance;
     AccountBusiness *shareInstance;
     
     IBOutlet UIActivityIndicatorView *activeBar;
@@ -37,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTerm_Privacy];
+    authInstance = [AuthApi sharedInstance];
+    authInstance.listener = self;
     shareInstance = [AccountBusiness sharedInstance];
     shareInstance.listener = self;
     
@@ -114,7 +117,7 @@
     } else if (status){
         [self->activeBar startAnimating];
         self->signup.hidden = true;
-        [shareInstance saveDataWithEmail: email.text name:username.text dob: @"Chưa chọn" gender: @"Chưa chọn" imgURL: @"https://firebasestorage.googleapis.com/v0/b/mymioto.appspot.com/o/UsersImg%2Fdefaultavatar.jpg?alt=media&token=d01ebb9c-bc62-469f-b709-db483bb0e284" phoneNumber: @"" fbLink:@"false" emailLink: @"true"];
+        [shareInstance saveDataWithEmail: email.text name:username.text dob: @"Chưa chọn" gender: @" " imgURL: @"https://firebasestorage.googleapis.com/v0/b/mymioto.appspot.com/o/UsersImg%2Fdefaultavatar.jpg?alt=media&token=d01ebb9c-bc62-469f-b709-db483bb0e284" phoneNumber: @"Chưa chọn" fbLink:@"false" emailLink: @"true"];
         
         ProfileViewController *vc2 = [[ProfileViewController alloc] init];
         [self.navigationController pushViewController:vc2 animated:YES];
@@ -123,6 +126,6 @@
 
 - (IBAction)signupButton:(id)sender {
     [self check];
-    [shareInstance signupWithEmail:email.text password:password.text];
+    [authInstance signupWithEmail:email.text password:password.text];
 }
 @end

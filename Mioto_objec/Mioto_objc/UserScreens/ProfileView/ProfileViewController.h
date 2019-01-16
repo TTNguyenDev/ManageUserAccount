@@ -16,6 +16,7 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "ForgotPasswordViewController.h"
 #import "DisplayAllFriends.h"
+#import "AuthApi.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

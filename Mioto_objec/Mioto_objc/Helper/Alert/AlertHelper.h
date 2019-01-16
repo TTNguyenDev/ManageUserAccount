@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MaterialSnackbar.h"
+#import "SVProgressHUD.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AlertHelper : NSObject
 
-
++ (void)showLoading;
++ (void)loadingFinished;
 + (void)showAlertWithMessage: (NSString*)mess;
 @end
 

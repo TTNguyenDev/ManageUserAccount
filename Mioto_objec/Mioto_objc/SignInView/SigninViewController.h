@@ -7,10 +7,10 @@
 //
 
 #import "BaseViewController.h"
-#import "AccountBusiness.h"
 #import "AlertHelper.h"
 #import "ProfileViewController.h"
 #import "ForgotPasswordViewController.h"
+#import "AuthApi.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

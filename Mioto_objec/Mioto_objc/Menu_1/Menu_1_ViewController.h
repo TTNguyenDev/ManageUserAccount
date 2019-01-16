@@ -11,9 +11,8 @@
 #import "SigninViewController.h"
 #import "SignupViewController.h"
 #import "AccountBusiness.h"
+#import "AuthApi.h"
 #import "EditProfileViewViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "AlertHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN

@@ -7,8 +7,6 @@
 //
 
 #import "AccountBusiness.h"
-#import "Menu_1_ViewController.h"
-#import "ProfileViewController.h"
 
 @interface AccountBusiness() {
     Profile* newUser;
@@ -32,71 +30,6 @@
         self.ref = [[FIRDatabase database] reference];
     }
     return self;
-}
-
-- (void)signupWithEmail: (NSString*)email
-               password:(NSString*)pass {
-    
-    [[FIRAuth auth] createUserWithEmail:email
-                               password:pass
-                             completion:^(FIRAuthDataResult * _Nullable authResult,
-                                          NSError * _Nullable error) {
-                                 if (error != nil) {
-                                     if (self.listener) {
-                                         [self.listener AuthStatus:0];
-                                     }
-                                 } else {
-                                     if (self.listener) {
-                                         [self.listener AuthStatus:1];
-                                         
-                                     }
-                                 }
-                             }];
-}
-
-- (void)signinWithEmail:(NSString*)email
-               password:(NSString*)pass {
-    FIRAuthCredential *credential =
-    [FIREmailAuthProvider credentialWithEmail:email
-                                     password:pass];
-    
-    [[FIRAuth auth] signInAndRetrieveDataWithCredential:credential
-                                             completion:^(FIRAuthDataResult * _Nullable authResult,
-                                                          NSError * _Nullable error) {
-                                                 if (error) {
-                                                     if (error != nil) {
-                                                         if (self.listener) {
-                                                             [self.listener AuthStatus:0];
-                                                         }
-                                                     }
-                                                 } else {
-                                                     if (self.listener) {
-                                                         [self.listener AuthStatus:1];
-                                                     }
-                                                 }
-                                             }];
-}
-
-- (bool)didLogin {
-    if ([FIRAuth.auth currentUser])
-        return true;
-    return false;
-}
-
-- (void)logout {
-    NSError *signOutError;
-    BOOL status = [[FIRAuth auth] signOut:&signOutError];
-    if (!status) {
-        NSLog(@"Error signing out: %@", signOutError);
-        if (self.listener) {
-            [self.listener LogOutStatus:0];
-            return;
-        }
-    } else {
-        if (self.listener) {
-            [self.listener LogOutStatus:1];
-        }
-    }
 }
 
 - (void)saveDataWithEmail:(NSString*)email name:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number fbLink:(NSString*)fbLink emailLink:(NSString*)emailLink {
@@ -144,12 +77,10 @@
     [[_ref child:@"Users"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSDictionary *dict = snapshot.value;
         if (dict && ![dict[@"mUserID"] isEqualToString:uid]) {
-//            if (![dict[@"mUserID"] isEqualToString:uid]) {
                 self->newUser = [[Profile alloc] transformUser:dict];
                 if (self.listener) {
                     [self.listener successProfileWith:self->newUser];
                 }
-//            }
         }
     }];
 }
@@ -307,14 +238,4 @@
     }];
 }
 
-- (void)resetPasswordWithEmail:(NSString*)email {
-    [[FIRAuth auth] sendPasswordResetWithEmail:email completion:^(NSError *_Nullable error) {
-        if (error != nil) {
-            if (self.listener)
-                [self.listener didSendRequestToResetPassword:0];
-        } else
-            if (self.listener)
-                [self.listener didSendRequestToResetPassword:1];
-    }];
-}
 @end

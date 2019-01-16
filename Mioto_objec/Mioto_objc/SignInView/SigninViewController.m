@@ -8,9 +8,8 @@
 
 #import "SigninViewController.h"
 
-@interface SigninViewController () <FireBaseListener> {
-    AccountBusiness *shareInstance;
-    
+@interface SigninViewController () <AuthListener> {
+    AuthApi *authInstance;
     IBOutlet UIActivityIndicatorView *activeBar;
     IBOutlet UITextField *email;
     IBOutlet UITextField *password;
@@ -27,8 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    shareInstance = [AccountBusiness sharedInstance];
-    shareInstance.listener = self;
+    authInstance = [AuthApi sharedInstance];
+    authInstance.listener = self;
 }
 
 
@@ -69,7 +68,7 @@
 - (IBAction)signinButton:(id)sender {
     [self check];
     
-    [shareInstance signinWithEmail:email.text password:password.text];
+    [authInstance signinWithEmail:email.text password:password.text];
 }
 
 - (IBAction)dismiss:(id)sender {

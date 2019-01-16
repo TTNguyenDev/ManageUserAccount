@@ -19,4 +19,11 @@
     MDCSnackbarManager.messageFont = [UIFont systemFontOfSize:18];
 }
 
++ (void)showLoading {
+    [SVProgressHUD show];
+}
+
++ (void)loadingFinished {
+    [SVProgressHUD dismiss];
+}
 @end

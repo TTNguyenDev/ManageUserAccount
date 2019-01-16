@@ -8,47 +8,40 @@
 
 #import <UIKit/UIKit.h>
 #import "FirebaseAuth.h"
+#import "Menu_1_ViewController.h"
+#import "ProfileViewController.h"
 #import "FirebaseDatabase.h"
 #import "Profile.h"
 #import "FirebaseStorage.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class AccountBusiness;
 
 @protocol FireBaseListener
-- (void)AuthStatus:(int)status;
 - (void)profileDataRecieved:(int)status;
-- (void)didSendRequestToResetPassword:(int)status;
 - (void)UploadProfileImageStatus:(int)status;
 - (void)LoginFbWithStatus:(int)status;
 - (void)LinkingFBStatus:(int)status;
 - (void)LinkingGGStatus:(int)status;
-- (void)LogOutStatus:(int)status;
 - (void)successProfileWith:(Profile*)profile;
 @end
 
 @interface AccountBusiness : NSObject
-+ (id)sharedInstance;
-- (void)UploadProfileImage: (UIImage*)image;
-- (void)signupWithEmail:(NSString*)email
-               password:(NSString*)pass;
-- (void)signinWithEmail:(NSString*)email
-               password:(NSString*)pass;
-- (void)saveDataWithEmail:(NSString*)email name:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number fbLink:(NSString*)fbLink emailLink:(NSString*)emailLink;
-- (void)updateDataWithName:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number;
-- (void)fetchData;
++ (id) sharedInstance;
+- (void) UploadProfileImage: (UIImage*)image;
+- (void) saveDataWithEmail:(NSString*)email name:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number fbLink:(NSString*)fbLink emailLink:(NSString*)emailLink;
+- (void) updateDataWithName:(NSString*)name dob:(NSString*)dob gender:(NSString*)gender imgURL:(NSString*)img phoneNumber:(NSString*)number;
+- (void) fetchData;
 - (Profile*)getData;
-- (bool)didLogin;
-- (void)logout;
-- (void)resetPasswordWithEmail:(NSString*)email;
-- (void)loginWithFacebook;
+- (void) loginWithFacebook;
 - (void) emailLinking:(NSString*) password;
-- (void)fetchAllData;
-
+- (void) fetchAllData;
 - (void) fbLinking;
+
 @property (nonatomic, weak) id<FireBaseListener> listener;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @end

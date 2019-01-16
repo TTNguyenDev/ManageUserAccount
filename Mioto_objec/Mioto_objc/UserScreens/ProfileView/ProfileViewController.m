@@ -8,8 +8,9 @@
 
 #import "ProfileViewController.h"
 
-@interface ProfileViewController () <FireBaseListener> {
+@interface ProfileViewController () <FireBaseListener,AuthListener> {
     AccountBusiness *shareInstance;
+    AuthApi *authInstance;
     IBOutlet UIImageView *profileImage;
     IBOutlet UILabel *username;
     IBOutlet BlackLabel *gender;
@@ -24,10 +25,7 @@
     IBOutlet UIButton *fbStatus_text;
     IBOutlet UIImageView *ggStatus_img;
     IBOutlet UIButton *ggStatus_text;
-    
 }
-
-
 - (IBAction)logoutButton:(id)sender;
 - (IBAction)fbLinking:(id)sender;
 - (IBAction)ggLinking:(id)sender;
@@ -53,7 +51,7 @@
     UIBarButtonItem *Friends = [[UIBarButtonItem alloc]initWithTitle:@"Friends" style:UIBarButtonItemStylePlain target:self action:@selector(toggleSearch)];
     Friends.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = Friends;
-
+    
 }
 
 -(void)toggleSearch {
@@ -63,8 +61,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self disableUserInteraction];
     shareInstance = [AccountBusiness sharedInstance];
     shareInstance.listener = self;
+    authInstance = [AuthApi sharedInstance];
+    authInstance.listener = self;
     [shareInstance fetchData];
     [self setupBorderForProfileImage];
     [self setupNaviBar];
@@ -74,6 +75,18 @@
     [singleTap setNumberOfTapsRequired:1];
     [profileImage addGestureRecognizer:singleTap];
     [self setupBarButton];
+    
+   
+}
+
+- (void)disableUserInteraction {
+    [AlertHelper showLoading];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+}
+
+- (void)enableUserInteraction {
+    [AlertHelper loadingFinished];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 -(void)singleTapping:(UIGestureRecognizer *)recognizer {
@@ -126,9 +139,10 @@
         ggStatus_img.image = [UIImage imageNamed: @"linkedToSocial"];
         [ggStatus_text setTitle:@"Đã xác thực" forState:UIControlStateNormal];
     }
+    [self enableUserInteraction];
 }
 
-- (void)LogOutStatus:(int)status {
+- (void)AuthStatus:(int)status {
     if (!status) {
         [AlertHelper showAlertWithMessage:@"Đăng xuất đang gặp vấn đề"];
     } else {
@@ -143,7 +157,7 @@
 }
 
 - (IBAction)logoutButton:(id)sender {
-    [shareInstance logout];
+    [authInstance logout];
 }
 
 - (IBAction)fbLinking:(id)sender {

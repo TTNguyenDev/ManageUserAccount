@@ -18,6 +18,7 @@
 		B54F46BA21B67A0300F2B328 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54F46B821B67A0300F2B328 /* ProfileViewController.xib */; };
 		B54F46BE21B685FC00F2B328 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B54F46BC21B685FC00F2B328 /* SignupViewController.m */; };
 		B54F46BF21B685FC00F2B328 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54F46BD21B685FC00F2B328 /* SignupViewController.xib */; };
+		B5608F7A21E72F2C009F7996 /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B5608F7921E72F2C009F7996 /* ImageLoader.m */; };
 		B56FCE5E21C0EBF8001404F7 /* AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B56FCE5D21C0EBF8001404F7 /* AlertHelper.m */; };
 		B574550A21BA756400F3254F /* Menu_1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B574550821BA756400F3254F /* Menu_1_ViewController.m */; };
 		B574550B21BA756400F3254F /* Menu_1_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B574550921BA756400F3254F /* Menu_1_ViewController.xib */; };
@@ -40,6 +41,7 @@
 		B5DB046621CDD17700A24621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5DB046521CDD17700A24621 /* GoogleService-Info.plist */; };
 		B5DB046B21CDE96100A24621 /* ViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DB046921CDE96100A24621 /* ViewProfileViewController.m */; };
 		B5DB046C21CDE96100A24621 /* ViewProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5DB046A21CDE96100A24621 /* ViewProfileViewController.xib */; };
+		B5E2BAB621E60F4B00F5CFFC /* AuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2BAB521E60F4B00F5CFFC /* AuthApi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		B54F46BB21B685FC00F2B328 /* SignupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		B54F46BC21B685FC00F2B328 /* SignupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		B54F46BD21B685FC00F2B328 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		B5608F7821E72F2C009F7996 /* ImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		B5608F7921E72F2C009F7996 /* ImageLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
 		B56FCE5C21C0EBF8001404F7 /* AlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertHelper.h; sourceTree = "<group>"; };
 		B56FCE5D21C0EBF8001404F7 /* AlertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertHelper.m; sourceTree = "<group>"; };
 		B574550721BA756400F3254F /* Menu_1_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu_1_ViewController.h; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		B5DB046821CDE96100A24621 /* ViewProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewProfileViewController.h; sourceTree = "<group>"; };
 		B5DB046921CDE96100A24621 /* ViewProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewProfileViewController.m; sourceTree = "<group>"; };
 		B5DB046A21CDE96100A24621 /* ViewProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewProfileViewController.xib; sourceTree = "<group>"; };
+		B5E2BAB421E60F4B00F5CFFC /* AuthApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthApi.h; sourceTree = "<group>"; };
+		B5E2BAB521E60F4B00F5CFFC /* AuthApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthApi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,11 +209,21 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
+		B5608F7021E72C46009F7996 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				B5608F7821E72F2C009F7996 /* ImageLoader.h */,
+				B5608F7921E72F2C009F7996 /* ImageLoader.m */,
+			);
+			path = ImageLoader;
+			sourceTree = "<group>";
+		};
 		B56FCE5B21C0EBDA001404F7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				B5C60C0421C3BFB3003DF375 /* PickerView */,
 				B5C60C0621C3BFBF003DF375 /* Alert */,
+				B5608F7021E72C46009F7996 /* ImageLoader */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -358,6 +374,8 @@
 			children = (
 				B5AD789421BB671C006E77C9 /* AccountBusiness.h */,
 				B5AD789521BB671C006E77C9 /* AccountBusiness.m */,
+				B5E2BAB421E60F4B00F5CFFC /* AuthApi.h */,
+				B5E2BAB521E60F4B00F5CFFC /* AuthApi.m */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -440,6 +458,7 @@
 				TargetAttributes = {
 					B59F4B8821AE7DFE00F3D7DB = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -515,7 +534,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Mioto_objc/Pods-Mioto_objc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -524,6 +542,7 @@
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -533,7 +552,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -542,6 +560,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -579,6 +598,8 @@
 				B53D014021B28DF100544CCB /* ForgotPasswordViewController.m in Sources */,
 				B59F4B9C21AE7DFF00F3D7DB /* main.m in Sources */,
 				B59F4B8E21AE7DFE00F3D7DB /* AppDelegate.m in Sources */,
+				B5608F7A21E72F2C009F7996 /* ImageLoader.m in Sources */,
+				B5E2BAB621E60F4B00F5CFFC /* AuthApi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +734,7 @@
 			baseConfigurationReference = 3C11991BB53427AF3BC75F1F /* Pods-Mioto_objc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4NA3RYS6C;
 				INFOPLIST_FILE = Mioto_objc/Info.plist;
@@ -722,6 +744,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = trietnguyen.mioto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mioto_objc/Helper/ImageLoader/Mioto_objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -731,6 +756,7 @@
 			baseConfigurationReference = 32A79D897A50ED63CF50B740 /* Pods-Mioto_objc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4NA3RYS6C;
 				INFOPLIST_FILE = Mioto_objc/Info.plist;
@@ -740,6 +766,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = trietnguyen.mioto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mioto_objc/Helper/ImageLoader/Mioto_objc-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

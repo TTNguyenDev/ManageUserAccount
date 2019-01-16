@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "AccountBusiness.h"
+#import "AuthApi.h"
 #import "AlertHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN

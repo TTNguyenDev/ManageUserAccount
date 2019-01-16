@@ -8,9 +8,13 @@
 
 #import "Menu_1_ViewController.h"
 
-@interface Menu_1_ViewController () <FireBaseListener> {
+@interface Menu_1_ViewController () <AuthListener, FireBaseListener> {
     IBOutlet UIButton *createAccount;
     AccountBusiness *shareInstance;
+    
+    
+    IBOutlet UIActivityIndicatorView *activityIndicator;
+    AuthApi *authInstance;
 }
 
 - (IBAction)SigninButton:(id)sender;
@@ -26,7 +30,7 @@
 }
 
 - (void)autoLogin {
-    if ([shareInstance didLogin]) {
+    if ([authInstance didLogin]) {
         ProfileViewController *vc2 = [[ProfileViewController alloc] init];
         [self.navigationController pushViewController:vc2 animated:YES];
     }
@@ -36,8 +40,23 @@
     [super viewDidLoad];
     shareInstance = [AccountBusiness sharedInstance];
     shareInstance.listener = self;
-//    [self autoLogin];
+    authInstance = [AuthApi sharedInstance];
+    authInstance.listener = self;
+    [self autoLogin];
     [self setupBorder];
+    
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false;
+    [activityIndicator stopAnimating];
+}
+
+- (void)disableUserInteraction {
+    [activityIndicator startAnimating];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+}
+
+- (void)enableUserInteraction {
+    [activityIndicator stopAnimating];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 - (IBAction)SigninButton:(id)sender {
@@ -48,29 +67,31 @@
 - (IBAction)SignupButton:(id)sender {
     SignupViewController *vc2 = [[SignupViewController alloc] init];
     [self.navigationController pushViewController:vc2 animated:YES];
-   
 }
 
 - (IBAction)LoginWithFB:(id)sender {
     [shareInstance loginWithFacebook];
+    [self disableUserInteraction];
 }
 
 - (void)LoginFbWithStatus:(int)status {
-    ProfileViewController *vc2 = [[ProfileViewController alloc] init];
+    [self enableUserInteraction];
     
+    ProfileViewController *vc2 = [[ProfileViewController alloc] init];
+
     switch (status) {
         case -1:
             [AlertHelper showAlertWithMessage:@"Không thể lấy dữ liệu từ Facebook của bạn"];
             break;
-            
+
         case 0:
             [AlertHelper showAlertWithMessage:@"Đã có lỗi xảy ra khi đăng nhập, vui lòng thử lại sau"];
             break;
-            
+
         case 1:
             [self.navigationController pushViewController: vc2 animated:YES];
             break;
-            
+
         default:
             break;
     }
