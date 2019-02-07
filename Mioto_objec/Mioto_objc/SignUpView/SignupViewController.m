@@ -50,29 +50,27 @@
     [self.view endEditing:true];
     
 }
--(void)check {
-    if (username.text.length == 0 || email.text.length == 0 || password.text != rePassword.text) {
-        if (username.text.length == 0) {
-            [AlertHelper showAlertWithMessage:@"Vui lòng nhập tên đăng nhập"];
-        }
-        if (email.text.length == 0) {
-            [AlertHelper showAlertWithMessage:@"Vui lòng nhập Email"];
-            [self clear:@"email"];
-        }
-        if (password.text != rePassword.text) {
-            [AlertHelper showAlertWithMessage:@"Mật khẩu không trùng nhau"];
-            [self clear:@"password"];
-        }
+-(bool)check {
+    if (username.text.length == 0) {
+        [AlertHelper showAlertWithMessage:@"Vui lòng nhập tên đăng nhập"];
+        return false;
     }
-    
-    else if (termPrivacy_checkbox_00.isCheck == false || termPrivacy_checkbox_01.isCheck == false)
-        [AlertHelper showAlertWithMessage:@"Đồng ý các điều khoản để tiếp tục"];
-    else
-        if (password.text.length < 6) {
-            [AlertHelper showAlertWithMessage:@"Mật khẩu bạn nhập ít hơn 6 kí tự"];
-            [self clear:@"password"];
-            [self uncheck_checkBox];
-        }
+    else if (email.text.length == 0) {
+        [AlertHelper showAlertWithMessage:@"Vui lòng nhập Email"];
+        [self clear:@"email"];
+        return false;
+    }
+    else if (password.text.length < 6) {
+        [AlertHelper showAlertWithMessage:@"Mật khẩu bạn nhập ít hơn 6 kí tự"];
+        [self clear:@"password"];
+        return false;
+    }
+    else if (password.text != rePassword.text) {
+        [AlertHelper showAlertWithMessage:@"Mật khẩu không trùng nhau"];
+        [self clear:@"password"];
+        return false;
+    }
+    return true;
 }
 
 - (void)uncheck_checkBox {
@@ -99,11 +97,7 @@
     [self uncheck_checkBox];
 }
 
-- (void)checkBoxValueDidChanged:(bool)value {    
-    if (termPrivacy_checkbox_00.isCheck == true && termPrivacy_checkbox_01.isCheck == true) {
-        [self check];
-    }
-    return;
+- (void)checkBoxValueDidChanged:(bool)value {
 }
 
 - (IBAction)dismiss:(id)sender {
@@ -125,7 +119,11 @@
 }
 
 - (IBAction)signupButton:(id)sender {
-    [self check];
-    [authInstance signupWithEmail:email.text password:password.text];
+    if ([self check]) {
+        if (termPrivacy_checkbox_00.isCheck && termPrivacy_checkbox_01.isCheck )
+            [authInstance signupWithEmail:email.text password:password.text];
+        else
+            [AlertHelper showAlertWithMessage:@"Đồng ý các điểu khoản để tiếp tục"];
+    }
 }
 @end

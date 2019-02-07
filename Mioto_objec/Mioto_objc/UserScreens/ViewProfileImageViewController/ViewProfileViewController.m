@@ -36,10 +36,14 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     [shareInstance UploadProfileImage:chosenImage];
     prorfileImage.image = chosenImage;
+    [AlertHelper showLoading];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
 }
 
 - (void)UploadProfileImageStatus:(int)status {
     if (status) {
+        [AlertHelper loadingFinished];
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
         [AlertHelper showAlertWithMessage: @"Chỉnh sửa hình thành công"];
         [UIView animateWithDuration:1 delay:0 options:(UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState) animations:^{
             double delayInSeconds = 1;

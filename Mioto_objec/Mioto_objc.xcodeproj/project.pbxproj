@@ -228,14 +228,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		B574550621BA754900F3254F /* Menu_1 */ = {
+		B574550621BA754900F3254F /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				B574550721BA756400F3254F /* Menu_1_ViewController.h */,
 				B574550821BA756400F3254F /* Menu_1_ViewController.m */,
 				B574550921BA756400F3254F /* Menu_1_ViewController.xib */,
 			);
-			path = Menu_1;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		B576A56B21BFB36C00887517 /* Model */ = {
@@ -273,7 +273,7 @@
 				B56FCE5B21C0EBDA001404F7 /* Helper */,
 				B576A56B21BFB36C00887517 /* Model */,
 				B5AD789321BB6686006E77C9 /* DataBase */,
-				B574550621BA754900F3254F /* Menu_1 */,
+				B574550621BA754900F3254F /* Menu */,
 				B5AD789221BB663C006E77C9 /* UserScreens */,
 				B5AD789121BB660C006E77C9 /* BaseClass */,
 				B5AD789021BB65E5006E77C9 /* AuthScreens */,

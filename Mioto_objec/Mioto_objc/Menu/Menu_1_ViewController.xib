@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Menu_1_ViewController">
             <connections>
-                <outlet property="activityIndicator" destination="LGM-NJ-wRt" id="QGg-un-tc9"/>
                 <outlet property="createAccount" destination="3WC-Rl-Edn" id="fNl-T0-eBW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,13 +27,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="LeE-xK-bEF">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LGM-NJ-wRt">
-                    <rect key="frame" x="182" y="423" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="1qq-Tw-G5z"/>
-                        <constraint firstAttribute="width" constant="50" id="zmi-Fe-mkE"/>
-                    </constraints>
-                </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeU-ep-gYk" userLabel="Logo">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                     <subviews>
@@ -124,7 +116,6 @@
                 <constraint firstAttribute="bottom" secondItem="Oho-Fy-O0I" secondAttribute="bottom" id="Niw-F5-YIP"/>
                 <constraint firstItem="LeE-xK-bEF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OcS-yO-ajw"/>
                 <constraint firstItem="LrW-iN-9iW" firstAttribute="bottom" secondItem="LeE-xK-bEF" secondAttribute="bottom" id="R3y-gx-FZ5"/>
-                <constraint firstItem="LGM-NJ-wRt" firstAttribute="centerX" secondItem="LeE-xK-bEF" secondAttribute="centerX" id="XRm-oD-4Hn"/>
                 <constraint firstAttribute="trailing" secondItem="Oho-Fy-O0I" secondAttribute="trailing" id="ZOd-xf-SxU"/>
                 <constraint firstAttribute="bottom" secondItem="LrW-iN-9iW" secondAttribute="bottom" id="ZhC-Ps-SxC"/>
                 <constraint firstAttribute="trailing" secondItem="UeU-ep-gYk" secondAttribute="trailing" id="aGU-bO-4YN"/>
@@ -134,7 +125,6 @@
                 <constraint firstItem="Oho-Fy-O0I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cYl-Zt-y03"/>
                 <constraint firstItem="LrW-iN-9iW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jyr-ao-G7B"/>
                 <constraint firstItem="UeU-ep-gYk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kLZ-4G-xK7"/>
-                <constraint firstItem="LGM-NJ-wRt" firstAttribute="centerY" secondItem="LeE-xK-bEF" secondAttribute="centerY" id="kRe-Hg-pmI"/>
                 <constraint firstItem="LeE-xK-bEF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kh0-F1-AYm"/>
                 <constraint firstAttribute="trailing" secondItem="LrW-iN-9iW" secondAttribute="trailing" id="oqL-wd-gTB"/>
             </constraints>

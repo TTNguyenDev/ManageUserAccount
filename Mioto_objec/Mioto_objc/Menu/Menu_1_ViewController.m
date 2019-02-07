@@ -13,7 +13,6 @@
     AccountBusiness *shareInstance;
     
     
-    IBOutlet UIActivityIndicatorView *activityIndicator;
     AuthApi *authInstance;
 }
 
@@ -45,18 +44,6 @@
     [self autoLogin];
     [self setupBorder];
     
-    activityIndicator.translatesAutoresizingMaskIntoConstraints = false;
-    [activityIndicator stopAnimating];
-}
-
-- (void)disableUserInteraction {
-    [activityIndicator startAnimating];
-    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-}
-
-- (void)enableUserInteraction {
-    [activityIndicator stopAnimating];
-    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 
 - (IBAction)SigninButton:(id)sender {
@@ -71,12 +58,9 @@
 
 - (IBAction)LoginWithFB:(id)sender {
     [shareInstance loginWithFacebook];
-    [self disableUserInteraction];
 }
 
 - (void)LoginFbWithStatus:(int)status {
-    [self enableUserInteraction];
-    
     ProfileViewController *vc2 = [[ProfileViewController alloc] init];
 
     switch (status) {
